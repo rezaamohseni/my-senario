@@ -21,7 +21,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('' , include ('root.urls'))
+    path('' , include ('root.urls')),
+    path('agents-grid/' , include ('agent.urls')),
+    path('blog-grid/' , include ('blog.urls')),
+    path('property-grid/' , include ('property.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
