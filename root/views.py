@@ -1,7 +1,17 @@
 from django.shortcuts import render
+from property.models import Propertie
+from .models import Service , Testimonial
+from agent.models import Agent
 
 def home(request):
-    return render(request , 'root/index.html' )
+    context = {
+        'property' : Propertie.objects.filter(status=True)[:3],
+        'home' : Service.objects.filter(status=True),
+        'testimonials' : Testimonial.objects.all(),
+        'agent' : Agent.objects.all(),
+        
+    }
+    return render(request , 'root/index.html' , context=context)
 def about(request):
     return render(request , 'root/about.html' )
 def contact(request):
