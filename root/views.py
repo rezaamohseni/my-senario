@@ -18,7 +18,7 @@ def about(request):
     context={
         'agent' : Agent.objects.all()
     }
-    return render(request , 'root/about.html' )
+    return render(request , 'root/about.html', context=context )
 def contact(request):
     return render(request , 'root/contact.html' )
 

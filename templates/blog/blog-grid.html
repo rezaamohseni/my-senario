@@ -44,11 +44,11 @@
               <div class="card-overlay">
                 <div class="card-header-b">
                   <div class="card-category-b">
-                    <a href={%url 'blog:list_by_blog'  blog=new.title%} class="category-b">{{new.title}}</a>
+                    <a href={% url 'blog:list_by_blog' blog=new.title%} class="category-b">{{new.title}}</a>
                   </div>
                   <div class="card-title-b">
                     <h2 class="title-2">
-                      <a href="blog-single.html">{% url 'blog:list_by_blog_single' id=new.id %}
+                      <a href="blog-single.html"{% url 'blog:list_by_blog_single' id=new.id %}>
                         <br></a>
                     </h2>
                   </div>
@@ -64,20 +64,7 @@
         <div class="row">
           <div class="col-sm-12">
             <nav class="pagination-a">
-              <ul class="pagination justify-content-end">
-                  {% if news.has_next and news.has_previous %}
-                  <h5><a href='?page=1'><<</a>
-                  <a href="?page={{news.previous_page_number}}"><</a>
-                  <a href="?page={{news.next_page_number}}">></a>
-                  <a href="?page={{last_page}}">>></a> </h5>
-                  {% elif news.has_next %}
-                  <h5><a href="?page={{news.next_page_number}}">></a>
-                  <a href="?page={{last_page}}">>></a> </h5>
-                  {% elif news.has_previous %}
-                  <h5><a href='?page=1'><<</a>
-                  <a href="?page={{news.previous_page_number}}"><</a></h5>
-                  {% endif %}
-              </ul>
+
             </nav>
           </div>
         </div>

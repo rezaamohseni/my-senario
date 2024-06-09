@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator,EmptyPage , PageNotAnInteger
+from .models import Blog
 
 
 from .models import Blog
@@ -26,7 +27,7 @@ def blog_grid(request , **kwargs):
             
     }
     return render(request , 'blog/blog-grid.html' , context=context)
-def blog_single(request , id):
+def blog_single(request,id):
     blog_single = Blog.objects.get(id=id)
     context ={
         'blog': blog_single

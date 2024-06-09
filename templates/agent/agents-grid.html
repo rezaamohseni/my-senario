@@ -44,7 +44,7 @@
                 <div class="card-header-d">
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
-                      <a href="#" class="link-two">{{person.user.username}}
+                      <a href={% url 'agent:agent-single' id=person.id %} class="link-two">{{person.user.username}}
                         <br> Escala</a>
                     </h3>
                   </div>
