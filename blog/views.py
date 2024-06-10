@@ -27,9 +27,13 @@ def blog_grid(request , **kwargs):
             
     }
     return render(request , 'blog/blog-grid.html' , context=context)
-def blog_single(request,id):
+def blog_single(request , id):
     blog_single = Blog.objects.get(id=id)
     context ={
         'blog': blog_single
     }
     return render(request , 'blog/blog-single.html' , context=context)
+
+# def blog_single(request ):
+#         return render(request , 'blog/blog-single.html' )
+

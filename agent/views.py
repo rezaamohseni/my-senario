@@ -6,9 +6,10 @@ from property.models import Propertie,Category
 def agents_grid(request):
     agent=Agent.objects.all()
     context = {
-        "agent": Agent.objects.all()
+        "agent": agent
     }
     return render(request , 'agent/agents-grid.html' , context=context)
+
 def agent_single(request,id):
     agent=Agent.objects.get(id=id)
     context={

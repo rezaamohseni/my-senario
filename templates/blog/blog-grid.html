@@ -48,8 +48,7 @@
                   </div>
                   <div class="card-title-b">
                     <h2 class="title-2">
-                      <a href="blog-single.html"{% url 'blog:list_by_blog_single' id=new.id %}>
-                        <br></a>
+                      <a href={% url 'blog:list_by_blog_single' id=new.id %}>{{new.title}}</a>
                     </h2>
                   </div>
                   <div class="card-date">

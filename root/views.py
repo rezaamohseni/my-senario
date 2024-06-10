@@ -10,7 +10,7 @@ def home(request):
         'home' : Service.objects.filter(status=True),
         'testimonials' : Testimonial.objects.all(),
         'agent' : Agent.objects.all(),
-        'news' : Blog.objects.filter(status=True)
+        'blog' : Blog.objects.filter(status=True)
         
     }
     return render(request , 'root/index.html' , context=context)

@@ -30,8 +30,6 @@ def property_grid(request,**kwargs):
 def peroperty_single(request , id):
     property = Propertie.objects.get(id=id)
     context={
-        'property-single' : property
-        
+        'single' : property   
     }
-    
     return render(request , 'property/property-single.html' , context=context)
